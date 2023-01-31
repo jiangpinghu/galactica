@@ -4,7 +4,8 @@ from app.test.common.common_http import http_base_url
 
 
 class ApiUrl(Enum):
-    user_login: str = {'/api/login': '用户登录'}
+    user_login: str = {'/login': '用户登录'}
+    captcha: str = {'/api/inner/boss-api/foundation/web/captcha': '获取验证码'}
 
 
     def get_url(self):
