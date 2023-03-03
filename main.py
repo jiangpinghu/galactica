@@ -1,7 +1,7 @@
 import requests
 
-from app.aios.common.apiurl import ApiUrl
-from app.aios.common.common_http import httpheader
+from app.micgenERP.operation.common.apiurl import ApiUrl
+from app.micgenERP.operation.common.common_http import httpheader
 
 
 def hi_galactica():
