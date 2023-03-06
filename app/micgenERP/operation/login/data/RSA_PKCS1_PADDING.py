@@ -5,8 +5,8 @@ import base64
 
 
 class documentRsa():
-    __public_key = "MEgCQQCmdtNguZBVB222S6fEmbRjcPLr9pMS0XY3F8NCYmhOeb1VbfAVYaB+by7WD1DI0aHmtIx3ex+ntgIVBUtoJIZFAgMBAAE="
-    __private_key = "MIIBPAIBAAJBAKZ202C5kFUHbbZLp8SZtGNw8uv2kxLRdjcXw0JiaE55vVVt8BVhoH5vLtYPUMjRoea0jHd7H6e2AhUFS2gkhkUCAwEAAQJAeNxnZp/0UjgdiTDu80hh951HUtlpOU2JlkCTjXxi/VMYQg8msttZj4ul0NQaJ11gynjbzB0h/7klM6Wlc33FFQIjANws6hTUzKkTp/qMKoNdW/95i1J5pFQOgHDj90wkoUoXLnMCHwDBjKV/9y0VZNmH7Vqm0GARGig1Ivpwa839TrhQUmcCIg7BU86hlDWgg5le21qCXy/3zUZxsHmRnznxjRklO0nj09ECHgkXF/bInx9wGx9dMHLBOqHS/qxwNh7tkUEiX1m2ZQIjALpyBKUeuL+tbJYuFHdycQe7WadRQGtBP3OwYeR9oLrAwnw="
+    # __public_key = "MEgCQQCmdtNguZBVB222S6fEmbRjcPLr9pMS0XY3F8NCYmhOeb1VbfAVYaB+by7WD1DI0aHmtIx3ex+ntgIVBUtoJIZFAgMBAAE="
+    # __private_key = "MIIBPAIBAAJBAKZ202C5kFUHbbZLp8SZtGNw8uv2kxLRdjcXw0JiaE55vVVt8BVhoH5vLtYPUMjRoea0jHd7H6e2AhUFS2gkhkUCAwEAAQJAeNxnZp/0UjgdiTDu80hh951HUtlpOU2JlkCTjXxi/VMYQg8msttZj4ul0NQaJ11gynjbzB0h/7klM6Wlc33FFQIjANws6hTUzKkTp/qMKoNdW/95i1J5pFQOgHDj90wkoUoXLnMCHwDBjKV/9y0VZNmH7Vqm0GARGig1Ivpwa839TrhQUmcCIg7BU86hlDWgg5le21qCXy/3zUZxsHmRnznxjRklO0nj09ECHgkXF/bInx9wGx9dMHLBOqHS/qxwNh7tkUEiX1m2ZQIjALpyBKUeuL+tbJYuFHdycQe7WadRQGtBP3OwYeR9oLrAwnw="
 
     def __init__(self, rsa_publicKey, rsa_privateKey):
         """
@@ -135,31 +135,21 @@ class documentRsa():
         return self.rsa_encrypt(msg).decode("utf-8")  # 加密成待传输的字符串
 
 if __name__ == '__main__':
-    msg = '123456'
-    public_key = "MEgCQQCmdtNguZBVB222S6fEmbRjcPLr9pMS0XY3F8NCYmhOeb1VbfAVYaB+by7WD1DI0aHmtIx3ex+ntgIVBUtoJIZFAgMBAAE="
-    private_key = "MIIBPAIBAAJBAKZ202C5kFUHbbZLp8SZtGNw8uv2kxLRdjcXw0JiaE55vVVt8BVhoH5vLtYPUMjRoea0jHd7H6e2AhUFS2gkhkUCAwEAAQJAeNxnZp/0UjgdiTDu80hh951HUtlpOU2JlkCTjXxi/VMYQg8msttZj4ul0NQaJ11gynjbzB0h/7klM6Wlc33FFQIjANws6hTUzKkTp/qMKoNdW/95i1J5pFQOgHDj90wkoUoXLnMCHwDBjKV/9y0VZNmH7Vqm0GARGig1Ivpwa839TrhQUmcCIg7BU86hlDWgg5le21qCXy/3zUZxsHmRnznxjRklO0nj09ECHgkXF/bInx9wGx9dMHLBOqHS/qxwNh7tkUEiX1m2ZQIjALpyBKUeuL+tbJYuFHdycQe7WadRQGtBP3OwYeR9oLrAwnw="
-
+    msg = 'zzzzzaaaaaa'
+    #CS1
+    # public_key = "MEgCQQC8Nb6SAEB68s1nJgDDTr46oR9yR/k6WWJozJcxkP1UTqszbm3fbHNvt7bP5vD2jOYlNpzZ7M/jG0RD3+YFbjCBAgMBAAE="
+    #CS8
+    public_key = "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALw1vpIAQHryzWcmAMNOvjqhH3JH+TpZYmjMlzGQ/VROqzNubd9sc2+3ts/m8PaM5iU2nNnsz+MbREPf5gVuMIECAwEAAQ=="
+    #CS1
+    # private_key = "MIIBOwIBAAJBALw1vpIAQHryzWcmAMNOvjqhH3JH+TpZYmjMlzGQ/VROqzNubd9sc2+3ts/m8PaM5iU2nNnsz+MbREPf5gVuMIECAwEAAQJAWjiJOgPU5RsvS5r0EqvUlNZX9Lh7yHTAr+wjLieKbcn2yFjElVk36NG4SPhTSQcvjn3+8RyMODBj6tZxJVPKgQIjAL2u6qxISSiNtL6NXgmHK/D7b9DjcE3Iql6a89tWqYg8bUUCHwD+AvYfPWd83jJCEtjko7hpOqK7zLDK7EAqF4+aVA0CIjnme+HtCs/jOan08yCLb2FXDxG/a1eDCmZofEmW0ZcxgtUCHgkslDUWo6k34TrPsXO4kg2C56O+xdfeZobeqPoa9QIiaLcrTf4NZmIUbemTppqwdU5AjbGTpYMApmYwJ3yQLsnGag=="
+    # CS8
+    private_key = "MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAvDW+kgBAevLNZyYAw06+OqEfckf5OlliaMyXMZD9VE6rM25t32xzb7e2z+bw9ozmJTac2ezP4xtEQ9/mBW4wgQIDAQABAkBaOIk6A9TlGy9LmvQSq9SU1lf0uHvIdMCv7CMuJ4ptyfbIWMSVWTfo0bhI+FNJBy+Off7xHIw4MGPq1nElU8qBAiMAva7qrEhJKI20vo1eCYcr8Ptv0ONwTciqXprz21apiDxtRQIfAP4C9h89Z3zeMkIS2OSjuGk6orvMsMrsQCoXj5pUDQIiOeZ74e0Kz+M5qfTzIItvYVcPEb9rV4MKZmh8SZbRlzGC1QIeCSyUNRajqTfhOs+xc7iSDYLno77F195mht6o+hr1AiJotytN/g1mYhRt6ZOmmrB1TkCNsZOlgwCmZjAnfJAuycZq"
     documentRsa = documentRsa(public_key,private_key)
-    rsa_encrypt = documentRsa.rsa_encrypt(msg)
-    print('加密:',rsa_encrypt)
-
-#pkcs8格式
-"""
------BEGIN PUBLIC KEY-----
-MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKZ202C5kFUHbbZLp8SZtGNw8uv2kxLR
-djcXw0JiaE55vVVt8BVhoH5vLtYPUMjRoea0jHd7H6e2AhUFS2gkhkUCAwEAAQ==
------END PUBLIC KEY-----"""
-
-
-"""
------BEGIN PRIVATE KEY-----
-MIIBVgIBADANBgkqhkiG9w0BAQEFAASCAUAwggE8AgEAAkEApnbTYLmQVQdttkun
-xJm0Y3Dy6/aTEtF2NxfDQmJoTnm9VW3wFWGgfm8u1g9QyNGh5rSMd3sfp7YCFQVL
-aCSGRQIDAQABAkB43Gdmn/RSOB2JMO7zSGH3nUdS2Wk5TYmWQJONfGL9UxhCDyay
-21mPi6XQ1BonXWDKeNvMHSH/uSUzpaVzfcUVAiMA3CzqFNTMqROn+owqg11b/3mL
-UnmkVA6AcOP3TCShShcucwIfAMGMpX/3LRVk2YftWqbQYBEaKDUi+nBrzf1OuFBS
-ZwIiDsFTzqGUNaCDmV7bWoJfL/fNRnGweZGfOfGNGSU7SePT0QIeCRcX9sifH3Ab
-H10wcsE6odL+rHA2Hu2RQSJfWbZlAiMAunIEpR64v61sli4Ud3JxB7tZp1FAa0E/
-c7Bh5H2gusDCfA==
------END PRIVATE KEY-----
-"""
+    # rsa_encrypt = documentRsa.rsa_encrypt(msg)
+    # print('加密:',rsa_encrypt)
+    # miwen = "r6nxgVxAX7QmG1P1JINSGopEUc7J40dU-bEG9fnprEK3rBgrKVBeVPAfFWS57mhy2ljhh5flBwzbcAs5WCKd_Q=="
+    #java公钥加密生成的密文,解密时需要将'-'和'_'替换成'+'和'/'
+    miwen = "r6nxgVxAX7QmG1P1JINSGopEUc7J40dU+bEG9fnprEK3rBgrKVBeVPAfFWS57mhy2ljhh5flBwzbcAs5WCKd/Q=="
+    # miwen = "YxK5R9NFCI5L0dlqWYr4rllSTooxj3wpoTjXAHjwHeF13VWeUY1zIblBgUocrOUniQYY7CagnmID+OC7O4bPDg=="
+    rsa_decrypt = documentRsa.rsa_decrypt(miwen)
+    print('解密:', rsa_decrypt)

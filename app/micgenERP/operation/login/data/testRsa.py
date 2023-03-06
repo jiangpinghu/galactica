@@ -9,17 +9,23 @@ pubkey, privkey = rsa.newkeys(512)
 
 
 # 将公钥以PKCS#1格式写入文件
-with open('pub_1.pem' ,'w+') as f:
+with open('pub_1.pem', 'w+') as f:
     f.write(pubkey.save_pkcs1().decode('utf-8'))
 # 将私钥以PKCS#1格式写入文件
-with open('pri_1.pem' ,'w+') as f:
+with open('pri_1.pem', 'w+') as f:
     f.write(privkey.save_pkcs1().decode('utf-8'))
 
 # 将公钥由PKCS#1格式转为PKCS#8格式
 os.system('openssl rsa --RSAPublicKey_in -in {}.pem -out {}.pem'.format('pub_1', 'pub_8'))
 
-# 将私钥由PKCS#1格式转为PKCS#8格式
+#   将pkcs8公钥转pkcs1公钥
+#   openssl rsa -pubin -in pub_8.pem -RSAPublicKey_out -out pub_1.pem
+
+#   将私钥由PKCS#1格式转为PKCS#8格式
 os.system('openssl pkcs8 -topk8 -inform PEM -in {}.pem -outform pem -nocrypt -out {}.pem'.format('pri_1', 'pri_8'))
+
+#   将PKCS8格式私钥再转换为PKCS1格式
+#   openssl rsa -in pri_8.pem -out pri_1.pem
 
 #导入密钥
 # with open('public.pem' ,'r') as f:
@@ -68,7 +74,7 @@ def rsa_decrypt(message):
 
 
 if __name__ == '__main__':
-    message = "111"
+    message = "Python RSA PKCS#1 转 PKCS#8"
     # 加密
     encrypt = rsa_encrypt(message)
     print('密文：', encrypt)
